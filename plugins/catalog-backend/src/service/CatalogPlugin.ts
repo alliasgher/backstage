@@ -13,11 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   coreServices,
   createBackendPlugin,
 } from '@backstage/backend-plugin-api';
 import { Entity, Validators } from '@backstage/catalog-model';
+import {
+  CatalogModelFragment,
+  compileCatalogModel,
+} from '@backstage/catalog-model/alpha';
 import { ForwardedError } from '@backstage/errors';
 import {
   CatalogProcessor,
@@ -86,6 +91,16 @@ class CatalogModelExtensionPointImpl implements CatalogModelExtensionPoint {
 
   get entityDataParser() {
     return this.#entityDataParser;
+  }
+
+  #modelFragments: CatalogModelFragment[] = [];
+
+  addModelFragment(fragment: CatalogModelFragment): void {
+    this.#modelFragments.push(fragment);
+  }
+
+  get modelFragments() {
+    return this.#modelFragments;
   }
 }
 
@@ -206,8 +221,13 @@ export const catalogPlugin = createBackendPlugin({
         catalogScmEvents,
         metrics,
       }) {
+        const model = modelExtensions.modelFragments.length
+          ? compileCatalogModel(modelExtensions.modelFragments)
+          : undefined;
+
         const builder = await CatalogBuilder.create({
           config,
+          model,
           reader,
           permissions,
           permissionsRegistry,

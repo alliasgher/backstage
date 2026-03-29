@@ -16,12 +16,13 @@
 
 import { createExtensionPoint } from '@backstage/backend-plugin-api';
 import { Entity, Validators } from '@backstage/catalog-model';
+import { CatalogModelFragment } from '@backstage/catalog-model/alpha';
 import {
   CatalogProcessor,
   CatalogProcessorParser,
   EntityProvider,
-  PlaceholderResolver,
   LocationAnalyzer,
+  PlaceholderResolver,
   ScmLocationAnalyzer,
 } from '@backstage/plugin-catalog-node';
 
@@ -103,10 +104,18 @@ export interface CatalogModelExtensionPoint {
   setFieldValidators(validators: Partial<Validators>): void;
 
   /**
-   * Sets the entity data parser which is used to read raw data from locations
+   * Sets the entity data parser which is used to read raw data from locations.
+   *
    * @param parser - Parser which will used to extract entities from raw data
    */
   setEntityDataParser(parser: CatalogProcessorParser): void;
+
+  /**
+   * Adds a catalog model fragment to be compiled into the catalog entity model.
+   *
+   * @param fragment - The model fragment to add
+   */
+  addModelFragment(fragment: CatalogModelFragment): void;
 }
 
 /**
