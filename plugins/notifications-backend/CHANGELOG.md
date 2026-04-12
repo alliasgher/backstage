@@ -1,5 +1,20 @@
 # @backstage/plugin-notifications-backend
 
+## 0.6.4
+
+### Patch Changes
+
+- 4c1fd43: Added an action to get a user's notifications
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.9.0
+  - @backstage/errors@1.3.0
+  - @backstage/plugin-catalog-node@2.2.0
+  - @backstage/catalog-model@1.7.8
+  - @backstage/config@1.3.7
+  - @backstage/plugin-notifications-common@0.2.2
+  - @backstage/plugin-notifications-node@0.2.25
+  - @backstage/plugin-signals-node@0.1.30
+
 ## 0.6.4-next.2
 
 ### Patch Changes

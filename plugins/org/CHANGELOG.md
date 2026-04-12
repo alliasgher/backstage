@@ -1,5 +1,21 @@
 # @backstage/plugin-org
 
+## 0.7.1
+
+### Patch Changes
+
+- 87eb31c: Fixed `GroupProfileCard` and `UserProfileCard` content overflowing on narrow screens.
+- d156cf4: Added `title` and `icon` to the new frontend system plugin definition.
+- f1f59b1: Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
+- Updated dependencies
+  - @backstage/ui@0.14.0
+  - @backstage/core-components@0.18.9
+  - @backstage/plugin-catalog-react@2.1.2
+  - @backstage/frontend-plugin-api@0.16.0
+  - @backstage/catalog-model@1.7.8
+  - @backstage/core-plugin-api@1.12.5
+  - @backstage/plugin-catalog-common@1.1.9
+
 ## 0.7.1-next.2
 
 ### Patch Changes

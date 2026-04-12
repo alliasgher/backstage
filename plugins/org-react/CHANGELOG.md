@@ -1,5 +1,17 @@
 # @backstage/plugin-org-react
 
+## 0.1.49
+
+### Patch Changes
+
+- e5af44c: Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
+- Updated dependencies
+  - @backstage/core-components@0.18.9
+  - @backstage/plugin-catalog-react@2.1.2
+  - @backstage/catalog-client@1.14.1
+  - @backstage/catalog-model@1.7.8
+  - @backstage/core-plugin-api@1.12.5
+
 ## 0.1.49-next.1
 
 ### Patch Changes

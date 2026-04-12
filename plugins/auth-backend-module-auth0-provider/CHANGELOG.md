@@ -1,5 +1,19 @@
 # @backstage/plugin-auth-backend-module-auth0-provider
 
+## 0.4.0
+
+### Minor Changes
+
+- 9244b70: Added federated logout support. Set `federatedLogout: true` in the Auth0 provider config to clear both the Auth0 session and any upstream IdP session on sign-out. The authenticator returns a logout URL that redirects the browser to Auth0's `/v2/logout?federated` endpoint, ensuring users must fully re-authenticate after signing out.
+
+### Patch Changes
+
+- b3bbd42: Added `createAuth0Authenticator` factory function that accepts a `CacheService` to cache Auth0 profile API responses for 1 minute during token refreshes. This avoids hitting Auth0 rate limits on repeated page refreshes. The module now uses the cached variant by default. The existing `auth0Authenticator` export remains available for use without caching.
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.9.0
+  - @backstage/errors@1.3.0
+  - @backstage/plugin-auth-node@0.7.0
+
 ## 0.4.0-next.2
 
 ### Minor Changes
