@@ -7846,7 +7846,7 @@ __metadata:
     "@backstage/config-loader": "workspace:^"
     "@backstage/errors": "workspace:^"
     "@backstage/types": "workspace:^"
-    "@electric-sql/pglite": "npm:^0.3.0"
+    "@electric-sql/pglite": "npm:^0.4.0"
     "@manypkg/get-packages": "npm:^1.1.3"
     "@microsoft/api-documenter": "npm:^7.28.1"
     "@microsoft/api-extractor": "npm:^7.57.3"
@@ -8601,10 +8601,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electric-sql/pglite@npm:^0.3.0":
-  version: 0.3.16
-  resolution: "@electric-sql/pglite@npm:0.3.16"
-  checksum: 10/1feba052caef61cbca6f8f8d9cdc5807e9d70bc2499a6b74ac722bd4f33fac87ccbd7a2efe9607d2632ca61805e1e57327fc97741858ba85100a09043bcc2a0f
+"@electric-sql/pglite@npm:^0.4.0":
+  version: 0.4.4
+  resolution: "@electric-sql/pglite@npm:0.4.4"
+  checksum: 10/192892eb075b5d8d9fa5620c57f4539b1c47d2de43a7b4ca4b16354a06effb82951cae40e4488bf508a52cecc9b8a8841cd43d69cb3f1a0e87f6d96e79991a63
   languageName: node
   linkType: hard
 
